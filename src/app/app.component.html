@@ -1,0 +1,53 @@
+<div class="content" role="main">
+  <h1 class="content__header">Prueba Técnica FrontEnd Angular</h1>
+  <section class="content__form">  
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <section class="content__form__group">
+        <label class="content__form__group__label">Origen</label>
+        <input type="text" formControlName="from" class="content__form__group__input"/>
+        <div *ngIf="form.controls['from'].invalid && form.controls['from'].touched" class="content__form__group__error">
+          *Tienes que añadir un Origen
+        </div>
+      </section>
+      <section class="content__form__group">
+        <label class="content__form__group__label">Destino</label>
+        <input type="text" formControlName="to" class="content__form__group__input"/>
+        <div *ngIf="form.controls['to'].invalid && form.controls['to'].touched" class="content__form__group__error">
+          *Tienes que añadir un Destino
+        </div>
+      </section>
+      <section class="content__form__group">
+        <label class="content__form__group__label">Fecha Salida</label>
+        <input type="date" formControlName="startDate" class="content__form__group__input"/>
+        <div *ngIf="form.controls['startDate'].invalid && form.controls['startDate'].touched" class="content__form__group__error">
+          *Tienes que añadir una fecha de salida
+        </div>
+      </section>
+      <section class="content__form__group">
+        <label class="content__form__group__label">Fecha Vuelta</label>
+        <input type="date" formControlName="endDate" class="content__form__group__input"/>
+        <div *ngIf="form.controls['endDate'].invalid && form.controls['endDate'].touched" class="content__form__group__error">
+          *Tienes que añadir una fecha de regreso
+        </div>
+      </section>
+      <section  class="content__form__button">
+        <button type="submit" class="btn" [disabled]="form.invalid || loading">Explorar</button>
+      </section>
+    </form>
+  </section>
+
+  <!-- spinner -->
+
+  <!-- weather- currentweather and next days -->
+  <div class="content__current_weather" *ngIf="(currenWeather | json) != '{}'">
+    <app-current-weather [weather]="currenWeather" [moreInfo]="true"></app-current-weather>
+  </div>
+  <div class="content__next_days_weather" *ngIf="nextDaysWeather.length>0">
+    <app-next-days [nextDaysWeather]="nextDaysWeather"></app-next-days>
+  </div>
+ 
+  <!-- flight-card -->
+  <div class="content__flights" >
+    <app-flight-card *ngFor="let flight of flights" [flight]="flight"></app-flight-card>
+  </div>
+</div>

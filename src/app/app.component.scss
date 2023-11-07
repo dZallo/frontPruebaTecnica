@@ -1,0 +1,58 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__header{
+            
+    }
+    &__form{
+        form{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            height: 100px;
+        }
+        &__group{
+            display: flex;
+            flex-direction: column;
+            margin: 0 1rem;
+            &__label{
+                
+            }
+            &__input{
+                border: 1px solid #1973B8;
+                border-radius: 2rem;
+                padding: 0.2rem;
+            }
+            &__error{
+                color:red;
+            }
+        }
+        button{
+            background-color: #1973B8;
+            border: 1px solid #1973B8;
+            border-radius: 2rem;
+            color: #FFFFFF;
+            cursor: pointer;
+            padding: 0.5rem 0.5rem;
+            margin-top: 1.1rem;
+            width: 9.5rem;
+            height: 2rem;
+            &:disabled{
+                background-color: lightgray;
+                border: 1px solid lightgray;
+            }
+        }        
+    }
+
+    &__next_days_weather{
+        width: 40%;
+    }
+    
+    &__flights{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

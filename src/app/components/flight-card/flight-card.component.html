@@ -1,0 +1,18 @@
+<article class="card" *ngIf="flight.companyName !== ''">
+    <div class="card__header">
+        <h2>{{ flight.companyName }}</h2>
+        <p></p>
+    </div>
+    <div class="card__body">
+        <div class="card__body__airports">
+            <p>Aeropuerto salida<span>{{flight.airportLeave}}</span></p>
+            <p>Aeropuerto llegada<span>{{flight.airportArrive}}</span></p>
+        </div>
+        <div class="card__body__duration">
+            <p>Duración <span>{{ flight.duration }}</span></p>
+        </div>
+        <div class="card__body__price">
+            {{ flight.price }}
+        </div>
+    </div>
+</article>

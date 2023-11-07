@@ -1,0 +1,19 @@
+<section class="weather" *ngIf="weather.weatherMain !== ''">
+
+    <div class="weather__date">
+        <span>{{ weather.dt | date: 'dd/MM/yyyy'}}</span>
+    </div>
+    <div class="weather__temp">
+        <img [src]="weather.weatherId | weatherImage">
+        <span>{{ weather.temp}} °C</span>
+    </div>
+
+    <div *ngIf="moreInfo" class="weather__extra_info">
+        <div class="weather__extra_info__humidity">
+            <p>Humedad(%)<span>{{ weather.humidity}} </span></p>
+        </div>
+        <div class="weather__extra_info__wind">
+            <p>Viento(meter/sec)<span>{{ weather.wind}} </span></p>
+        </div>
+    </div>
+</section>
